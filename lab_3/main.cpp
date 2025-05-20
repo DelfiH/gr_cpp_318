@@ -7,6 +7,7 @@
  * locale (ª®¤¨à®¢ª ): ibm866
  */
 
+#include "QApplication.h"
 #include <iostream>
 #include "probabilities.h"
 #include "initialization.h"
