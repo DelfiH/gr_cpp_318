@@ -1,13 +1,12 @@
 /*
- * ‹ ¡®à â®à­ ï à ¡®â  ü3.1
- * ’¥¬ : "ˆáá«¥¤®¢ ­¨¥ äã­ªæ¨© ‘++ ¢ IDE (¨­â¥£à¨à®¢ ­­®© áà¥¤¥ à §à ¡®âª¨) Qt Creator"
- *  §à ¡®âç¨ª: ‚ á¨­ ‘¥à£¥©
- * ƒàã¯¯ : gr_cpp318
- * OS: Windows
- * locale (ª®¤¨à®¢ª ): ibm866
- */
-
-#include "QApplication.h"
+* Лабораторная работа № 3.1
+* Тема: "Исследование функций С++ в IDE (интегрированной среде разработки) Qt Creator"
+* Разработчик: Васин Сергей
+* OS: Windows
+* Группа: gr_cpp318
+* Кодировка: ibm866
+*/
+#include <QApplication>
 #include <iostream>
 #include "probabilities.h"
 #include "initialization.h"
@@ -20,45 +19,45 @@
 
 using namespace std;
 
-// ”ã­ªæ¨ï ¤«ï § ¤ ­¨ï 1
+// Функция для задания 1
 void task1() {
-    std::cout << "‡ ¤ ­¨¥ 1" << std::endl;
+    std::cout << "Задание 1" << std::endl;
     calculate_probabilities();
 }
 
-// ”ã­ªæ¨ï ¤«ï § ¤ ­¨ï 2
+// Функция для задания 2
 void task2() {
-    std::cout << "‡ ¤ ­¨¥ 2" << std::endl;
+    std::cout << "Задание 2" << std::endl;
     testPrintChar();
 }
 
-// ”ã­ªæ¨ï ¤«ï § ¤ ­¨ï 3
+// Функция для задания 3
 void task3() {
-    std::cout << "‡ ¤ ­¨¥ 3" << std::endl;
+    std::cout << "Задание 3" << std::endl;
     demonstrate_initialization();
 }
 
-// ”ã­ªæ¨ï ¤«ï § ¤ ­¨ï 4
+// Функция для задания 4
 void task4() {
-    std::cout << "‡ ¤ ­¨¥ 4" << std::endl;
-    showAnimalMenu(); // ‚ë§®¢ äã­ªæ¨¨ ¤«ï ®â®¡à ¦¥­¨ï ¨ ®¡à ¡®âª¨ ¢ë¡®à  ¦¨¢®â­®£®
+    std::cout << "Задание 4" << std::endl;
+    showAnimalMenu(); // Вызов функции для отображения и обработки выбора животного
 }
 
-// ”ã­ªæ¨ï ¤«ï § ¤ ­¨ï 5
+// Функция для задания 5
 void task5() {
-    std::cout << "‡ ¤ ­¨¥ 5" << std::endl;
+    std::cout << "Задание 5" << std::endl;
     find_min_max();
 }
 
-// ”ã­ªæ¨ï ¤«ï § ¤ ­¨ï 6
+// Функция для задания 6
 void task6() {
-    std::cout << "‡ ¤ ­¨¥ 6" << std::endl;
+    std::cout << "Задание 6" << std::endl;
     demonstrate_type_cast();
 }
 
-// ”ã­ªæ¨ï ¤«ï § ¤ ­¨ï 7
+// Функция для задания 7
 void task7() {
-    std::cout << "‡ ¤ ­¨¥ 7" << std::endl;
+    std::cout << "Задание 7" << std::endl;
     virtual_elevator();
 }
 
@@ -69,16 +68,16 @@ int main(int argc, char *argv[]) {
     int choice;
 
     while (true) {
-        // Žá­®¢­®¥ ¬¥­î
-        std::cout << "\n‚ë¡¥à¨â¥ § ¤ ­¨¥ (1-7) ¨«¨ 0 ¤«ï ¢ëå®¤ : " << std::endl;
-        std::cout << "1. ‚ëç¨á«¥­¨¥ ¢¥à®ïâ­®áâ¨" << std::endl;
-        std::cout << "2. à¨¢¥¤¥­¨¥ ¢ à¨ ­â®¢ ¢ë§®¢ " << std::endl;
-        std::cout << "3. ¤¥¬®­áâà æ¨¨ à §«¨ç­ëå â¨¯®¢ ¨­¨æ¨ «¨§ æ¨¨" << std::endl;
-        std::cout << "4. ‚ë¡®à ¦¨¢®â­®£®" << std::endl;
-        std::cout << "5.  ©â¨ ¡®«ìè¥¥/¬¥­ìè¥¥" << std::endl;
-        std::cout << "6. à¥®¡à §®¢ ­¨¥ â¨¯®¢ ¤ ­­ëå" << std::endl;
-        std::cout << "7. ‚¨àâã «ì­ë© «¨äâ" << std::endl;
-        std::cout << "0. ‚ëå®¤ ¨§ ¯à®£à ¬¬ë" << std::endl;
+        // Основное меню
+        std::cout << "\nВыберите задание (1-7) или 0 для выхода: " << std::endl;
+        std::cout << "1. Вычисление вероятности" << std::endl;
+        std::cout << "2. Приведение вариантов вызова" << std::endl;
+        std::cout << "3. демонстрации различных типов инициализации" << std::endl;
+        std::cout << "4. Выбор животного" << std::endl;
+        std::cout << "5. Найти большее/меньшее" << std::endl;
+        std::cout << "6. Преобразование типов данных" << std::endl;
+        std::cout << "7. Виртуальный лифт" << std::endl;
+        std::cout << "0. Выход из программы" << std::endl;
         std::cin >> choice;
 
         if ((choice >= 1 && choice <= 7) || choice == 0) {
@@ -91,12 +90,12 @@ int main(int argc, char *argv[]) {
                 case 6: task6(); break;
                 case 7: task7(); break;
                 case 0:
-                    std::cout << "‚ëå®¤ ¨§ ¯à®£à ¬¬ë." << std::endl;
-                    return 0; // à®áâ® ¢ëå®¤¨¬ ¨§ äã­ªæ¨¨ main
+                    std::cout << "Выход из программы." << std::endl;
+                    return 0; // Просто выходим из функции main
             }
         } else {
-            std::cout << "¥¢¥à­ë© ¢ë¡®à § ¤ ­¨ï. ®¦ «ã©áâ , ¯®¯à®¡ã©â¥ á­®¢ ." << std::endl;
+            std::cout << "Неверный выбор задания. Пожалуйста, попробуйте снова." << std::endl;
         }
     }
-    return app.exec();
+    return app.exec(); // Запускаем цикл обработки событий Qt в конце main()
 }
