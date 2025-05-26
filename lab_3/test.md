@@ -176,11 +176,11 @@ std::cout << VALUE <<"\n";
 
 int main() {
 #if (VALUE == 0)
-    std::cout << "VALUE 0" << "\n"; 
+    std::cout << "VALUE 0" << '\n'; 
 #elif (VALUE == 1)
     std::cout << "VALUE 1" << '\n'; 
 #else
-    std::cout << "VALUE is: " << VALUE << " (which is not 0 or 1)" << "\n"; 
+    std::cout << "VALUE is: " << VALUE << " (which is not 0 or 1)" << '\n'; 
 #endif
 }
 ```
