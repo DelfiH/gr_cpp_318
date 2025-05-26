@@ -170,17 +170,17 @@ std::cout << VALUE <<"\n";
 
 ### ИСПРАВЛЕННЫЙ КОД:
 ``` cpp
-#include <iostream> // Добавлен include для iostream
+#include <iostream>
 
-#define VALUE 2 // Добавлено определение VALUE
+#define VALUE 2
 
 int main() {
 #if (VALUE == 0)
-  std::cout << VALUE << "\n";
+    std::cout << "VALUE 0" << "\n"; // Строка
 #elif (VALUE == 1)
-  std::cout << VALUE << "\n";
+    std::cout << "VALUE 1" << "\n"; // Строка
 #else
-  std::cout << VALUE << "\n";
+    std::cout << "VALUE is: " << VALUE << " (which is not 0 or 1)" << "\n"; // Число
 #endif
 }
 ```
