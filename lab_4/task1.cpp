@@ -4,26 +4,31 @@
 #include <random>
 #include <algorithm>
 #include <limits>
+#include <string>
+#include <sstream>
+#include "safeinput.h"
+
+// Type aliases для улучшения читаемости
+using int_vector = std::vector<int>;
+using size_type = std::size_t;
 
 // Функция для генерации псевдослучайных чисел в заданном диапазоне (собственная реализация)
 int generateRandom(int minVal, int maxVal) {
-    static std::random_device rd;  // Статическое для инициализации только один раз
-    static std::mt19937 gen(rd()); // Статическое для инициализации только один раз
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
     std::uniform_int_distribution<> distrib(minVal, maxVal);
     return distrib(gen);
 }
 
+
 // Задание 1: Работа с массивом случайных чисел
 void task1() {
-    const int arraySize = 10;
-    std::vector<int> arr(arraySize);
+    const size_type arraySize = 10;
+    int_vector arr(arraySize);
     int minRange, maxRange;
 
-    std::cout << "Введите минимальное значение диапазона: ";
-    std::cin >> minRange;
-
-    std::cout << "Введите максимальное значение диапазона: ";
-    std::cin >> maxRange;
+    minRange = safeInput("Введите минимальное значение диапазона: ");
+    maxRange = safeInput("Введите максимальное значение диапазона: ");
 
     if (minRange >= maxRange) {
         std::cerr << "Ошибка: Минимальное значение должно быть меньше максимального.\n";
@@ -36,7 +41,7 @@ void task1() {
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distrib(minRange, maxRange);
 
-    for (int i = 0; i < arraySize; ++i) {
+    for (size_type i = 0; i < arraySize; ++i) {
         arr[i] = distrib(gen);
     }
 
@@ -56,7 +61,7 @@ void task1() {
 
     // 2. Заполнение массива с использованием собственной реализации ГПСЧ
     std::cout << "\nИспользование собственной реализации ГПСЧ:\n";
-    for (int i = 0; i < arraySize; ++i) {
+    for (size_type i = 0; i < arraySize; ++i) {
         arr[i] = generateRandom(minRange, maxRange);
     }
 

@@ -1,54 +1,62 @@
 #include "tasks.h"
 #include <iostream>
 #include <functional>
+#include <limits>
+#include <string>
+#include <sstream>
+#include <map>
+#include "safeinput.h"
 
-// Обычный указатель на функцию
+// Type aliases для улучшения читаемости
+using int_operation = std::function<int(int, int)>;
+using func_ptr = int (*)(int, int);
+
+// Обычные функции
 int andFuncPtr(int a, int b) { return a & b; }
 int orFuncPtr(int a, int b) { return a | b; }
 int xorFuncPtr(int a, int b) { return a ^ b; }
 
 // Функция с указателем на функцию
-int calculateWithFunctionPtr(int a, int b, int (*operation)(int, int)) {
+int calculateWithFunctionPtr(int a, int b, func_ptr operation) {
     return operation(a, b);
 }
 
 // std::function
-int calculateWithStdFunction(int a, int b, std::function<int(int, int)> operation) {
+int calculateWithStdFunction(int a, int b, int_operation operation) {
     return operation(a, b);
 }
 
 void task8() {
     int choice, a, b;
-    std::cout << "Выберите логическую функцию (1-И, 2-ИЛИ, 3-XOR): ";
-    std::cin >> choice;
 
+    // Используем safeInput только один раз
+    choice = safeInput("Выберите логическую функцию (1-И, 2-ИЛИ, 3-XOR): ");
     if (choice < 1 || choice > 3) {
         std::cerr << "Ошибка: неверный выбор функции.\n";
         return;
     }
 
-    std::cout << "Введите два целых числа: ";
-    std::cin >> a >> b;
+    a = safeInput("Введите первое целое число: ");
+    b = safeInput("Введите второе целое число: ");
 
     int result;
 
+    // ?? Используем std::map для выбора функции
 #ifdef USE_STD_FUNCTION
-    std::function<int(int, int)> func;
-    switch (choice) {
-        case 1: func = andFuncPtr; break;
-        case 2: func = orFuncPtr; break;
-        case 3: func = xorFuncPtr; break;
-    }
-    result = calculateWithStdFunction(a, b, func);
+    std::map<int, int_operation> operations = {
+        {1, andFuncPtr},
+        {2, orFuncPtr},
+        {3, xorFuncPtr}
+    };
+    result = calculateWithStdFunction(a, b, operations[choice]);
     std::cout << "Результат (std::function): " << result << std::endl;
 #else
-    int (*funcPtr)(int, int) = nullptr;
-    switch (choice) {
-        case 1: funcPtr = andFuncPtr; break;
-        case 2: funcPtr = orFuncPtr; break;
-        case 3: funcPtr = xorFuncPtr; break;
-    }
-    result = calculateWithFunctionPtr(a, b, funcPtr);
+    std::map<int, func_ptr> operations = {
+        {1, andFuncPtr},
+        {2, orFuncPtr},
+        {3, xorFuncPtr}
+    };
+    result = calculateWithFunctionPtr(a, b, operations[choice]);
     std::cout << "Результат (указатель на функцию): " << result << std::endl;
 #endif
 }

@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
+    safeinput.cpp \
     task1.cpp \
     task2.cpp \
     task3.cpp \
@@ -32,6 +33,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 HEADERS += \
+    safeinput.h \
     tasks.h \
     task1.h \
     task2.h \

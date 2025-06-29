@@ -8,9 +8,19 @@
  */
 #include "tasks.h"
 #include <iostream>
+#include <limits>   // Для numeric_limits
+#include <string>   // Для std::string
+#include <sstream>  // Для std::stringstream
+#include <type_traits> // Для type aliases
+#include "safeinput.h"
+
+// Type alias для удобства
+using IntType = int;
+
+
 
 int main() {
-    int choice;
+    IntType choice;
 
     while (true) {
         std::cout << "Выберите задание для выполнения:\n";
@@ -28,7 +38,9 @@ int main() {
         std::cout << "9. Задание 9\n";
         std::cout << "0. Выход\n";
         std::cout << "\nВаш выбор: ";
-        std::cin >> choice;
+
+        // Используем safeInput для ввода номера задания
+        choice = safeInput("");
 
         switch (choice) {
             case 1:
