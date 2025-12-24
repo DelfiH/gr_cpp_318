@@ -1,0 +1,10 @@
+1 Popova Olena Dmitrievna w 31.01.1970 05.10.2012 HE Accountant Not married Sales Department
+2 Ivanov Ivan Ivanovich m 15.05.1985 10.03.2010 SE Driver Married Transport Department
+3 Petrov Petr Petrovich m 20.07.1990 12.05.2015 HE Programmer Not married Development Department
+4 Sidorova Anna Sergeevna w 10.09.1982 01.08.2008 SE Sales Manager Married Sales Department
+5 Kuznetsov Alexey Viktorovich m 25.11.1978 15.06.2005 HE Director Married Administration
+6 Smirnova Irina Vladimirovna w 05.03.1995 20.09.2018 SE Secretary Not married Administration
+7 Andreev Andrey Andreevich m 12.12.1980 03.07.2007 HE Engineer Not married Development Department
+8 Vasilyeva Ekaterina Yurievna w 18.04.1988 25.02.2013 HE Economist Married Financial Department
+9 Pavlov Pavel Pavlovich m 01.01.1992 11.11.2016 SE Security Guard Not married Security Department
+10 Nikolaeva Olga Ivanovna w 28.06.1975 30.04.2002 HE Lawyer Not married Legal Department
